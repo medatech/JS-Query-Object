@@ -4,6 +4,10 @@ var objectQuery = function (objectContext, query, /* optional */ defaultValue) {
     if (typeof (defaultValue) === 'undefined') {
         defaultValue = null;
     }
+
+    if (objectContext === null) {
+        return defaultValue;
+    }
     
     queryParts = query.split('.');
     for (i = 0; i < queryParts.length; i += 1) {
